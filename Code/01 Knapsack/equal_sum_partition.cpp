@@ -1,13 +1,12 @@
 /*
 PROBLEM STATEMENT : 
-    Given an array arr and a sum1 . Tell whether there is a subset of array 
-    arr whose sum equals the given sum (sum1).
+    Given an array arr . Tell whether the given array can be 
+    split into two subsets such that their respective sum is equal.
 
     Example : 
-    arr[] = {2, 3, 7, 8, 10}
-    sum1 = 11
+    arr[] = {1, 5, 11, 5}
     Output : Yes
-    Explanation : sum({3, 8})=11
+    Explanation : sum({1, 5, 5}) == sum({11})
 */
 
 #include<bits/stdc++.h>
@@ -36,32 +35,38 @@ int main()
     int n;
     cout<<"No of items : ";
     cin>>n;
-    int wt[n], val[n], W;
+    int wt[n], val[n], W, tot_sum=0;
     cout<<"Enter array elements : ";
     for(int i=0 ; i<n ; i++)
     {
         cin>>wt[i];
+        tot_sum+=wt[i];
     }
-    cout<<"Enter the sum : ";
-    cin>>W;
-    memset(dp,-1,sizeof(dp));
-    for(int i=0 ; i<n+1 ; i++)
+    if(tot_sum%2==0)
     {
-        for(int j=0 ; j<W+1 ; j++)
+        W=int(tot_sum/2);
+        memset(dp,-1,sizeof(dp));
+        for(int i=0 ; i<n+1 ; i++)
         {
-            if(i==0)
-                dp[i][j]=false;
-            if(j==0)
-                dp[i][j]=true;
+            for(int j=0 ; j<W+1 ; j++)
+            {
+                if(i==0)
+                    dp[i][j]=false;
+                if(j==0)
+                    dp[i][j]=true;
+            }
+        }
+        bool possible = subset_sum(wt, W, n);
+        if(possible)
+            cout<<"YES"<<endl;
+        else
+        {
+            cout<<"NO"<<endl;
         }
     }
-    bool possible = subset_sum(wt, W, n);
-    if(possible)
-        cout<<"YES"<<endl;
     else
     {
         cout<<"NO"<<endl;
-    }
-    
+    }  
     return 0;
 }
