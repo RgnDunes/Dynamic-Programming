@@ -1,18 +1,18 @@
 /*
 PROBLEM STATEMENT : 
-    Given an array arr . Tell whether the given array can be 
-    split into two subsets such that their respective sum is equal.
+    Given an array arr . Print the minimum difference between
+    the two partition subset of the given array.
 
     Example : 
-    arr[] = {1, 5, 11, 5}
-    Output : Yes
-    Explanation : sum({1, 5, 5}) == sum({11})
+    arr[] = {1, 6, 11, 5}
+    Output : 1
+    Explanation : sum({5,6})-sum({1,11})=1
 */
 
 #include<bits/stdc++.h>
 using namespace std;
 bool dp[102][1002];
-bool subset_sum(int wt[], int W, int n)
+int subset_sum(int wt[], int W, int n)
 {
     for(int i=1 ; i<n+1 ; i++)
     {
@@ -20,7 +20,7 @@ bool subset_sum(int wt[], int W, int n)
         {
             if(j>=wt[i-1])
             {
-                dp[i][j] = (dp[i-1][j-wt[i-1]] || dp[i-1][j]);
+                dp[i][j] = (dp[i-1][j-wt[i-1]] + dp[i-1][j]);
             }
             else
             {
@@ -35,16 +35,16 @@ int main()
     int n;
     cout<<"No of items : ";
     cin>>n;
-    int wt[n], val[n], W, tot_sum=0;
+    int wt[n], val[n], tot_sum=0;
     cout<<"Enter array elements : ";
     for(int i=0 ; i<n ; i++)
     {
         cin>>wt[i];
         tot_sum+=wt[i];
     }
-    if(tot_sum%2==0)
+    vector <int> subset1;
+    for(int W=0 ; W<=tot_sum/2 ; W++)
     {
-        W=int(tot_sum/2);
         memset(dp,-1,sizeof(dp));
         for(int i=0 ; i<n+1 ; i++)
         {
@@ -58,15 +58,9 @@ int main()
         }
         bool possible = subset_sum(wt, W, n);
         if(possible)
-            cout<<"YES"<<endl;
-        else
-        {
-            cout<<"NO"<<endl;
-        }
+            subset1.push_back(W);
     }
-    else
-    {
-        cout<<"NO"<<endl;
-    }  
+    int final_subset1_sum=*max_element(subset1.begin(),subset1.end());
+    cout<<"Minimum Difference : "<<(tot_sum-(2*final_subset1_sum))<<endl;
     return 0;
 }

@@ -40,7 +40,6 @@ int main()
     for(int i=0 ; i<n ; i++)
     {
         cin>>wt[i];
-        tot_sum+=wt[i];
     }
     cout<<"Enter the sum : ";
     cin>>W;
@@ -55,8 +54,8 @@ int main()
                 dp[i][j]=1;
         }
     }
-    int possible = subset_sum(wt, W, n);
+    int tot_subsets = subset_sum(wt, W, n);
     
-    cout<<"Total subsets with sum = "<<W<<" are : "<<possible<<endl;
+    cout<<"Total subsets with sum = "<<W<<" are : "<<tot_subsets<<endl;
     return 0;
 }
