@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int dp[102][1002];
-int knapsack(int wt[], int val[], int W, int n)
+int unbounded_knapsack(int wt[], int val[], int W, int n)
 {
     for(int i=1 ; i<n+1 ; i++)
     {
@@ -35,7 +35,7 @@ int main()
     {
         cin>>val[i];
     }
-    cout<<"Enter the capacity of knapsack : ";
+    cout<<"Enter the capacity of unbounded knapsack : ";
     cin>>W;
     memset(dp,-1,sizeof(dp));
     for(int i=0 ; i<n+1 ; i++)
@@ -46,7 +46,7 @@ int main()
                 dp[i][j]=0;
         }
     }
-    int maxProfit = knapsack(wt, val, W, n);
+    int maxProfit = unbounded_knapsack(wt, val, W, n);
     cout<<"Max Profit is : "<<maxProfit<<endl;
     return 0;
 }
