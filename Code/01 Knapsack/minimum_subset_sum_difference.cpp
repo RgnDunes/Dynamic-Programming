@@ -12,7 +12,7 @@ PROBLEM STATEMENT :
 #include<bits/stdc++.h>
 using namespace std;
 bool dp[102][1002];
-int subset_sum(int wt[], int W, int n)
+bool subset_sum(int wt[], int W, int n)
 {
     for(int i=1 ; i<n+1 ; i++)
     {
@@ -20,7 +20,7 @@ int subset_sum(int wt[], int W, int n)
         {
             if(j>=wt[i-1])
             {
-                dp[i][j] = (dp[i-1][j-wt[i-1]] + dp[i-1][j]);
+                dp[i][j] = (dp[i-1][j-wt[i-1]] || dp[i-1][j]);
             }
             else
             {
