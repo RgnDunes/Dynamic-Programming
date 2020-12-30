@@ -1,4 +1,4 @@
-<h1 align="center">Dynamic Programming</h1>
+<h1 align="center"><a href="#">DYNAMIC PROGRAMMING</a></h1>
 <h3>This repo will contain the basic and most asked/general dynamic problem question's solution for my future reference.</h3>
 
 <h2><a href="https://youtube.com/playlist?list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go">Youtube Tutorial</a></h2>
