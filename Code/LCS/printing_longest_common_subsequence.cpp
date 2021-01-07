@@ -36,7 +36,7 @@ string lcs(string X, string Y, int m, int n)
         }
         else
         {
-            if(dp[i-1][j] > dp[i][j-1])
+            if(dp[i-1][j] >= dp[i][j-1])
             {
                 i-=1;
             }
