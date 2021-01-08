@@ -41,3 +41,13 @@
     <li>Sequence Pattern Matching</li>
     <li>Minimum number of insertion in a string to make it palindome</li>
 </ol>
+<h3><a href="#">Matrix Chain Multiplication (MCM)</a></h3>
+<ol>
+    <li>Matrix Chain Multiplication (MCM)</li>
+    <li>Printing Matrix Chain Multiplication</li>
+    <li>Evaluate expression to True/Boolean Parenthesization</li>
+    <li>Min/Max value of an Expression</li>
+    <li>Pallindrome Partitioning</li>
+    <li>Scramble String</li>
+    <li>Egg Dropping Problem</li>
+</ol>
