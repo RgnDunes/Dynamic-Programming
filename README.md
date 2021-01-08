@@ -43,7 +43,8 @@
 </ol>
 <h3><a href="#">Matrix Chain Multiplication (MCM)</a></h3>
 <ol>
-    <li>Matrix Chain Multiplication (MCM)</li>
+    <li>Matrix Chain Multiplication (MCM) Recursive</li>
+    <li>Matrix Chain Multiplication (MCM) Memoization</li>
     <li>Printing Matrix Chain Multiplication</li>
     <li>Evaluate expression to True/Boolean Parenthesization</li>
     <li>Min/Max value of an Expression</li>
