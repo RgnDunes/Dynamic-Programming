@@ -1,13 +1,13 @@
 /*
 PROBLEM : 
-    Given two strings X and Y. Print the minimimum number of insertions and deletions to convert String X To String Y
+    Given a strings X. Perform minimum number of insertions to make string pallindrome.
 
 EXAMPLE : 
-    X : "heap"
-    Y : "pea"
-OUTPUT : Insertion : 1
-         Deletion : 2
+    X : "aebcbda"
+OUTPUT : 5
+EXPLANATION : Longest Pallindromic Subsequence is "abcba" and it's length is 5.
 */
+
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -28,12 +28,11 @@ int lcs(string X, string Y, int m, int n)
 }
 int main()
 {
-    cout<<"Enter first string (X) : ";
-    string X;
+    cout<<"Enter string (X) : ";
+    string X , Y;
     cin>>X;
-    cout<<"Enter second string (Y) : ";
-    string Y;
-    cin>>Y;
+    Y = X;
+    reverse(Y.begin(), Y.end());
     memset(dp,0,sizeof(dp));
     for(int i=0 ; i<X.length()+1 ; i++)
     {
@@ -45,7 +44,6 @@ int main()
     }
     int lcsLength=0;
     lcsLength=lcs(X, Y, X.length(), Y.length());
-    cout<<"No of Deletions :  "<<(X.length()-lcsLength)<<endl;
-    cout<<"No of Insertions :  "<<(Y.length()-lcsLength)<<endl;
+    cout<<"Minimum number of insertions : "<<(X.length()-lcsLength)<<endl;
     return 0;
 }
