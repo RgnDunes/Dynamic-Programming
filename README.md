@@ -45,10 +45,13 @@
 <ol>
     <li>Matrix Chain Multiplication (MCM) Recursive</li>
     <li>Matrix Chain Multiplication (MCM) Memoization</li>
-    <li>Printing Matrix Chain Multiplication</li>
-    <li>Evaluate expression to True/Boolean Parenthesization</li>
-    <li>Min/Max value of an Expression</li>
-    <li>Pallindrome Partitioning</li>
+    <!-- <li>Printing Matrix Chain Multiplication</li> -->
+    <li>Pallindrome Partitioning (Recursive)</li>
+    <li>Pallindrome Partitioning (Memoization)</li>
+    <li>Pallindrome Partitioning (Memoization Optimized)</li>
+    <li>Evaluate expression to True/Boolean Parenthesization (Recursion)</li>
+    <li>Evaluate expression to True/Boolean Parenthesization (Memoized)</li>
+    <!-- <li>Min/Max value of an Expression</li> -->
     <li>Scramble String</li>
     <li>Egg Dropping Problem</li>
 </ol>
