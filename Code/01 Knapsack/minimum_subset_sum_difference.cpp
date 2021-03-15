@@ -56,14 +56,22 @@ int main()
         }
     }
     subset_sum(wt, W, n);
-    for(int i=0 ; i<n+1 ; i++)
-    {
-        for(int j=0 ; j<(W/2)+1 ; j++)
+//     METHOD - 01
+//     for(int i=0 ; i<n+1 ; i++)
+//     {
+//         for(int j=0 ; j<(W/2)+1 ; j++)
+//         {
+//             if(dp[i][j])
+//                 subset1.push_back(j);
+//         }
+//     }    
+    
+//     METHOD - 02
+    for(int j=0 ; j<(W/2)+1 ; j++)
         {
-            if(dp[i][j])
+            if(dp[n][j])
                 subset1.push_back(j);
         }
-    }        
     int final_subset1_sum=*max_element(subset1.begin(),subset1.end());
     cout<<"Minimum Difference : "<<(tot_sum-(2*final_subset1_sum))<<endl;
     return 0;
